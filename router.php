@@ -24,14 +24,22 @@ switch ($params[0]) {
     
     case 'user_page':
         $controller = new login_controller();
-        if (!empty($_POST['username']) && !empty($_POST['password'])) {
-            if (is_user_admin($_POST['username'], $_POST['password'])) {
+        
+        $user = check_user();
+
+        switch ($user) {
+            case 'admin':
                 $controller->show_admin();
-            } else {
+                break;
+            case 'user':
                 $controller->show_user();
-            }
-        } else {
-            $controller->show_login_error();  
+                break;
+            case 'no_user':
+                $controller->show_login_error();
+                break;
+            case 'error':
+                $controller->show_login_error();
+                break;
         }
     break;
     
