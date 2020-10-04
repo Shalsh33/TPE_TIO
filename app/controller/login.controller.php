@@ -47,7 +47,7 @@ class login_controller {
 	
 	function login() {
 		
-		$name = $_POST['name'];
+		$name = $_POST['user'];
 		$pass = $_POST['pass'];
 		
 		$db_pass = $this->model->get($name);
