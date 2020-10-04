@@ -1,5 +1,5 @@
 <?php
-include_once 'app/controllers/login.controller.php';
+include_once 'app/controller/login.controller.php';
 
 
 // defino la base url para la construccion de links con urls semánticas

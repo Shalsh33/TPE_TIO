@@ -1,5 +1,8 @@
 <?php
 
+require_once 'app/view/login.view.php';
+require_once 'app/model/users.model.php';
+
 class login_controller {
 	
 	private $model;
