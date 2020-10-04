@@ -28,20 +28,24 @@ class users_model {
 	
 	private function check_connection (){
 		
-		return ($this->db);
+		return ($this->db) ? true : false;
 		
 	}
 	
 	function get($name){
-		
-		$query = $this->db->prepare("SELECT pass FROM $this->table WHERE name = ?");
+		if ($this->check_connection){
+			$query = $this->db->prepare("SELECT pass FROM $this->table WHERE name = ?");
+				
 			
-		
-		$result = $query->execute([$name]);
-			
+			$result = $query->execute([$name]);
+				
 
-		return ($result->fetch(PDO::OBJ));
-		
+			return ($result->fetch(PDO::OBJ));
+		} else {
+			
+			return false;
+			
+		}
 	}
 	
 }
