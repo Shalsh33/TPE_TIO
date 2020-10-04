@@ -18,6 +18,12 @@ login_cotroller::__construct()
 
 Instancia la clase, crea una instancia de users_model y de login_view.
 
+<<<<<<< HEAD
+login_cotroller::login_form()
+
+Llama a la vista y devuelve la pàgina del form.
+
+=======
 
 ### Login View
 
@@ -42,3 +48,4 @@ login_view::show_user()
 ### router.php
 
 Captura y redirecciona todas las actions a las url correspondientes
+>>>>>>> 9fc77031b58608247f4b1100cbd7ca297f86ec0a
