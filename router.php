@@ -1,5 +1,6 @@
 <?php
 include_once 'app/controller/login.controller.php';
+include_once 'libs/php/functions.php';
 
 
 // defino la base url para la construccion de links con urls semánticas
@@ -20,15 +21,18 @@ switch ($params[0]) {
         $controller = new login_controller();
         $controller->login_form();
     break;
-
-    case 'admin_panel':
-        $controller = new login_controller();
-        $controller->show_admin();
-    break;
     
     case 'user_page':
         $controller = new login_controller();
-        $controller->show_user();
+        if (!empty($_POST['username']) && !empty($_POST['password'])) {
+            if (is_user_admin($_POST['username'], $_POST['password'])) {
+                $controller->show_admin();
+            } else {
+                $controller->show_user();
+            }
+        } else {
+            $controller->show_login_error();  
+        }
     break;
     
     case 'login_error':

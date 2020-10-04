@@ -10,11 +10,11 @@
         <form action="/TPE_TIO/user_page" method="POST" class="login-form">
             <div class="form-group">
                 <label for="username">Nombre de usuario</label>
-                <input type="text" class="form-control" id="username" placeholder="Usuario...">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Usuario...">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña...">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña...">
             </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>
