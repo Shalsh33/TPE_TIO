@@ -1,6 +1,5 @@
 <?php
-include_once 'app/controllers/task.controller.php';
-include_once 'app/controllers/auth.controller.php';
+include_once 'app/controllers/login.controller.php';
 
 
 // defino la base url para la construccion de links con urls semánticas
@@ -10,43 +9,35 @@ define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'listar'; // acción por defecto si no envían
+    $action = 'login'; // acción por defecto si no envían
 }
 
-// parsea la accion Ej: suma/1/2 --> ['suma', 1, 2]
 $params = explode('/', $action);
 
-// determina que camino seguir según la acción
 switch ($params[0]) {
+
     case 'login':
-        $controller = new AuthController();
-        $controller->showLogin();
+        $controller = new login_controller();
+        $controller->login_form();
     break;
-    case 'listar':
-        $controller = new TaskController();
-        $controller->showTasks();
-        break;
-    case 'insertar':
-        $controller = new TaskController();
-        $controller->addTask();
-        break;
-    case 'eliminar': // eliminar/:ID
-        $controller = new TaskController();
-        $id = $params[1];
-        $controller->deleteTask($id);
-        break;
-    case 'finalizar':
-        $controller = new TaskController();
-        $id = $params[1];
-        $controller->finalizeTask($id);
-        break;
-    case 'ver':
-        $controller = new TaskController();
-        $id = $params[1];
-        $controller->showDetail($id);
-        break;
+
+    case 'admin_panel':
+        $controller = new login_controller();
+        $controller->show_admin();
+    break;
+    
+    case 'user_page':
+        $controller = new login_controller();
+        $controller->show_user();
+    break;
+    
+    case 'login_error':
+        $controller = new login_controller();
+        $controller->show_login_error();
+    break;
+
     default:
-        header("HTTP/1.0 404 Not Found");
-        echo('404 Page not found');
-        break;
+        $controller = new login_controller();
+        $controller->show_404();
+    break;
 }
