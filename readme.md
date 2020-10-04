@@ -17,3 +17,8 @@ users_model::get($name)
 login_cotroller::__construct()
 
 Instancia la clase, crea una instancia de users_model y de login_view.
+
+login_cotroller::login_form()
+
+Llama a la vista y devuelve la pàgina del form.
+
