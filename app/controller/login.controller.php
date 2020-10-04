@@ -20,6 +20,30 @@ class login_controller {
 		$this->view->login_form();
 		
 	}
+
+	function show_404() {
+
+		$this->view->show_404();
+
+	}
+
+	function show_admin() {
+
+		$this->view->show_admin();
+		
+	}
+
+	function show_user() {
+
+		$this->view->show_user();
+		
+	}
+
+	function show_login_error() {
+
+		$this->view->show_login_error();
+		
+	}
 	
 	function login() {
 		

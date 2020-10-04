@@ -14,4 +14,9 @@
         
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1">Sistema de Login</span>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/TPE_TIO/login">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
         </nav>
