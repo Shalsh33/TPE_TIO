@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-sm-12">
 
-        <form action="router.php" method="POST" class="login-form">
+        <form action="/TPE_TIO/user_page" method="POST" class="login-form">
             <div class="form-group">
                 <label for="username">Nombre de usuario</label>
                 <input type="text" class="form-control" id="username" placeholder="Usuario...">
