@@ -1,5 +1,8 @@
 <?php
 
+require_once 'app/view/login.view.php';
+require_once 'app/model/users.model.php';
+
 class login_controller {
 	
 	private $model;
@@ -15,6 +18,30 @@ class login_controller {
 	function login_form(){
 		
 		$this->view->login_form();
+		
+	}
+
+	function show_404() {
+
+		$this->view->show_404();
+
+	}
+
+	function show_admin() {
+
+		$this->view->show_admin();
+		
+	}
+
+	function show_user() {
+
+		$this->view->show_user();
+		
+	}
+
+	function show_login_error() {
+
+		$this->view->show_login_error();
 		
 	}
 	
